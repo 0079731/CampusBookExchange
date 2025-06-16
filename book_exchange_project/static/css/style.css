@@ -1,14 +1,11 @@
-
 body {
   font-family: 'Nunito', sans-serif;
   background-color: #F5E1C0;
   color: #3B2F2F;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-  width: 100%;
-  overflow-x: hidden;
 }
+
 
 h1, h2, h3 {
   font-family: 'Merriweather', serif;
@@ -17,22 +14,12 @@ h1, h2, h3 {
 }
 
 .container {
-  max-width: 1200px;
+  width: 90%;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 80px;
+  padding: 20px;
 }
 
-.results-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 80px;
-}
-
-.no-results-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 80px;
-}
 
 .hero {
   text-align: center;
@@ -45,6 +32,7 @@ h1, h2, h3 {
   margin-bottom: 20px;
 }
 
+
 .input {
   padding: 8px 12px;
   font-size: 1em;
@@ -55,8 +43,9 @@ h1, h2, h3 {
   color: #3B2F2F;
 }
 
+
 .button {
-  background-color: #8B5F3D;  
+  background-color: #8B5F3D;
   color: #fff;
   padding: 8px 16px;
   border: none;
@@ -69,9 +58,10 @@ h1, h2, h3 {
   background-color: #6F452D;
 }
 
+
 .clear-button {
   background-color: #8B5F3D;  
-  margin-left: 8px;           
+  margin-left: 8px;        
   color: #fff;
   padding: 8px 16px;
   border: none;
@@ -84,13 +74,13 @@ h1, h2, h3 {
   background-color: #6F452D;
 }
 
+
 .card {
   background-color: white;
   border-radius: 8px;
   padding: 16px;
-  margin: 0 40px 20px 40px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
-  max-width: calc(100% - 80px);
 }
 
 .card h2 {
@@ -98,12 +88,14 @@ h1, h2, h3 {
   color: #5D3A1A;
 }
 
+
 .book-icon {
   fill: #5D3A1A;
   color: #5D3A1A;
   width: 1.5rem;
   height: 1.5rem;
 }
+
 
 a {
   color: #5D3A1A;
@@ -114,6 +106,7 @@ a:hover {
   text-decoration: underline;
   color: #3B2715;
 }
+
 
 .form-container {
   width: 100%;
@@ -139,8 +132,6 @@ a:hover {
 
 .form-field-wrapper input[type="text"],
 .form-field-wrapper input[type="number"],
-.form-field-wrapper input[type="password"],
-.form-field-wrapper input[type="email"],
 .form-field-wrapper select,
 .form-field-wrapper textarea {
   width: 100%;
@@ -199,6 +190,7 @@ a:hover {
   background-color: #6F452D;
 }
 
+/* 11) İptal linki stili */
 .cancel-link {
   display: inline-block;
   margin-top: 15px;
@@ -210,42 +202,15 @@ a:hover {
   text-decoration: underline;
 }
 
+
 nav {
-  background-color: #3B2715;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-  margin: 0;
-  padding: 0;
+  background-color: transparent;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  margin: 0 auto;
-  max-width: 1200px;
-  width: calc(100% - 160px);
-  box-sizing: border-box;
-}
-
-.nav-left a {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white !important;
-  text-decoration: none;
-  text-transform: uppercase !important;
-  letter-spacing: 1px;
-}
-
-.nav-left a:hover {
-  color: #F5E1C0;
 }
 
 .nav-right {
@@ -254,114 +219,19 @@ nav {
   gap: 1rem;
 }
 
-.nav-right a {
-  color: white !important;
-  text-decoration: none;
-  font-weight: 500;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px;
-}
-
-.nav-right a:hover {
-  color: #F5E1C0;
-  text-decoration: underline;
-}
-
-.nav-right span {
-  color: white;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 .logout-button {
   background-color: #8B5F3D;
-  color: white;
+  color: #fff;
   padding: 6px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.95rem;
   transition: background-color 0.2s ease-in-out;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px;
-  font-weight: bold;
 }
 
 .logout-button:hover {
   background-color: #6F452D;
-}
-
-/* Force uppercase for all navigation links */
-nav a, 
-nav .nav-left a, 
-nav .nav-right a {
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  color: white !important;
-}
-
-nav .nav-left a {
-  letter-spacing: 1px !important;
-}
-
-/* Footer styling with consistent margins */
-footer {
-  background-color: #F5E1C0;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-footer .container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 0 80px !important;
-}
-
-footer p {
-  margin: 0;
-  color: #5D3A1A;
-  font-size: 0.9rem;
-}
-
-/* Ensure navigation styling is consistent across all pages */
-nav {
-  background-color: #3B2715 !important;
-  width: 100vw !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-nav .nav-container {
-  margin: 0 auto !important;
-  max-width: 1200px !important;
-  width: calc(100% - 160px) !important;
-  padding: 15px 80px !important;
-}
-
-/* Ensure logout button is always uppercase across all pages */
-button[type="submit"].logout-button,
-.logout-button,
-nav .logout-button,
-.nav-right .logout-button,
-.logout-form button,
-.logout-form .logout-button,
-form.logout-form button[type="submit"] {
-  text-transform: uppercase !important;
-  font-weight: bold !important;
-  letter-spacing: 0.5px !important;
-  color: white !important;
-  background-color: #8B5F3D !important;
-}
-
-/* Universal logout button styling - catches all variations */
-button:contains("Logout"),
-button:contains("logout"),
-*[class*="logout"] button,
-nav button[type="submit"],
-.nav-right button {
-  text-transform: uppercase !important;
-  font-weight: bold !important;
 }
 
 .logout-form {
@@ -370,6 +240,7 @@ nav button[type="submit"],
   display: inline;
 }
 
+/* Django messages */
 .messages {
   list-style-type: none;
   padding: 0;
@@ -390,6 +261,7 @@ nav button[type="submit"],
 .messages li.info    { background-color: #17a2b8; }
 .messages li.debug   { background-color: #6c757d; }
 
+
 .filter-form {
   display: flex;
   flex-wrap: wrap;
@@ -398,37 +270,42 @@ nav button[type="submit"],
   margin-bottom: 20px;
 }
 
+
 .filter-form .search-field {
   width: 300px;
   min-width: 200px;
 }
 
+
 .filter-form select {
   min-width: 150px;
 }
+
 
 .filter-form .button {
   margin-top: 8px;
 }
 
-.login-form .form-field-wrapper {
-  margin-bottom: 15px;
+/* LOGIN
+*/
+.login-form {
+  max-width: 600px;     
+  margin: 20px auto;    
 }
 
-.login-form .form-field-wrapper input,
-.login-form input[type="text"],
-.login-form input[type="password"],
-.login-form input#id_username,
-.login-form input#id_password {
-  width: 100% !important;
-  max-width: 300px !important;
+.login-form table {
+  width: 100%;         
+  border-collapse: collapse;
+}
+
+.login-form td input[type="text"],
+.login-form td input[type="password"] {
+  width: 100%;
   box-sizing: border-box;
-  padding: 10px;
-  border: 1px solid #A6896C;
-  border-radius: 4px;
-  background-color: #FFF9F1;
-  color: #3B2F2F;
-  font-size: 1em;
+}
+
+
+.login-form .button {
   display: block;
-  margin: 0;
+  margin-top: 15px;
 }

@@ -341,18 +341,16 @@ def reports(request):
     prolific_buyers = []
     with connection.cursor() as c:
         c.execute("""
-            SELECT u.username, COUNT(DISTINCT o.listing_id) AS count
-              FROM listings_offer AS o
-         JOIN auth_user        AS u ON o.buyer_id = u.id
-             GROUP BY u.id, u.username
-            HAVING count > 3
-             ORDER BY count DESC;
+        SELECT u.username,
+            COUNT(DISTINCT o.listing_id) AS cnt
+        FROM listings_offer AS o
+        JOIN auth_user AS u ON o.buyer_id = u.id
+        GROUP BY u.id, u.username
+        HAVING cnt > 3;
         """)
-        for username, count in c.fetchall():
-            prolific_buyers.append({
-                'username': username,
-                'count':    count,
-            })
+        for username, cnt in c.fetchall():
+            prolific_buyers.append({'username': username, 'count': cnt})
+
 
      # 6) Courses without any available listing (using DISTINCT)
     courses_never_available = []
@@ -377,9 +375,13 @@ def reports(request):
                 'course_code': code,
                 'course_name': name,
             })
-
+   
     return render(request, 'listings/reports.html', {
-        # … your other context keys …
+        'top_listing_raw':         top_listing_raw,
+        'courses_data_raw':        courses_data_raw,
+        'recent_count_raw':        recent_count_raw,
+        'avg_price_per_author':    avg_price_per_author,
+        'prolific_buyers':         prolific_buyers,
         'courses_never_available': courses_never_available,
     })
 
@@ -480,14 +482,4 @@ def top_listing_with_offers_count(request):
         'num_offers': num_offers,
     })
 
-@login_required
-def my_offers(request):
-    """
-    Show all the offers the current user has made.
-    """
-    offers = ( Offer.objects
-                    .filter(buyer=request.user)
-                    .select_related('listing__book', 'listing__student') )
-    return render(request, 'listings/my_offers.html', {
-        'offers': offers,
-    })
+
